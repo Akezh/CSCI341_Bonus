@@ -2,10 +2,15 @@ import React, { FC } from "react";
 
 import { Props } from "./props";
 
-export const SectionHeader: FC<Props> = ({ title }: Props) => {
+export const SectionHeader: FC<Props> = ({ title, description }: Props) => {
   return (
-    <h2 className="tw-mb-8 tw-text-2xl tw-font-regular md:tw-text-sectionHeader text-white">
-      {title}
-    </h2>
+      <div>
+        <h2 className="tw-mb-8 tw-text-2xl tw-font-regular md:tw-text-sectionHeader text-white">
+          {title}
+        </h2>
+        <p className="tw-mb-8 tw-text-lg tw-font-regular text-white">
+          {description}
+        </p>
+      </div>
   );
 };

@@ -1,1 +1,3 @@
-export * from "./component";
+export * from "./CountriesRankings";
+export * from "./DiseasesRankings";
+export * from "./CountriesTableFilter";

@@ -1,6 +1,8 @@
 export * from "./AnimationWrapper";
 export * from "./Container";
 export * from "./Section";
+
+export * from "./BecomeMember";
 export * from "./Header";
 export * from "./Starter";
 export * from "./Projects";

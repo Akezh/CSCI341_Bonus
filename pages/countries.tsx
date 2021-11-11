@@ -1,21 +1,19 @@
 import {
   BecomeMember,
   Header,
-  Starter,
   Footer,
-  CountriesRankings,
+  CountriesTableFilter,
   DiseasesRankings,
 } from "../components";
 
-const IndexPage = () => (
+const CountriesPage = () => (
   <div>
-    <Header activeTab="Home" />
-    <Starter />
-    <CountriesRankings />
+    <Header activeTab="Countries" />
+    <CountriesTableFilter />
     <BecomeMember />
     <DiseasesRankings />
     <Footer />
   </div>
 );
 
-export default IndexPage;
+export default CountriesPage;
