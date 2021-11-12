@@ -10,4 +10,6 @@ export * from "./Experience";
 export * from "./Skills";
 export * from "./RankingTable";
 export * from "./Rankings";
+export * from "./SingleCountrySearch";
+export * from "./PublicServantConsole";
 export * from "./Footer";

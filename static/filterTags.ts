@@ -1,9 +1,13 @@
-export const filterTags: Record<string, string> = {
-  Country: "cname",
-  "Death ratio": "death_ratio",
-  "Total deaths": "total_deaths",
-  "Infected people": "total_patients",
-  "Population death ratio": "population_death_ratio",
-  "Population infection ratio": "population_infection_ratio",
-  Population: "population",
+export type FilterMappingType = {
+  readonly field: string;
+  readonly value: string;
 };
+
+export const filterTags: Array<FilterMappingType> = [
+  { field: "Death ratio", value: "death_ratio" },
+  { field: "Total deaths", value: "total_deaths" },
+  { field: "Infected people", value: "total_patients" },
+  { field: "Population death ratio", value: "population_death_ratio" },
+  { field: "Population infection ratio", value: "population_infection_ratio" },
+  { field: "Population", value: "population" },
+];

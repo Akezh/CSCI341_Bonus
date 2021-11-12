@@ -1,7 +1,8 @@
 import { Container, Section } from "components";
-import React, { FC, useEffect, useMemo, useState } from "react";
+import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { RankingTable } from "components/RankingTable";
-import { flags, filterTags } from "static/flags";
+import { flags } from "static/flags";
+import { filterTags, FilterMappingType } from "static/filterTags";
 import { Attributes } from "./props";
 import axios from "axios";
 
@@ -38,6 +39,26 @@ export const CountriesTableFilter: FC = () => {
     getCountriesTable();
   }, []);
 
+  const onFilterTagClick = useCallback(
+    (filterTag: string) => () => {
+      axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/api/countries/pandemicStatus",
+        headers: {},
+        data: {
+          filter_field: filterTag,
+        },
+      })
+        .then((response) => {
+          setCountries(response.data.rows);
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    },
+    []
+  );
+
   return (
     <Container style={{ backgroundColor: "#222125" }}>
       <Section title="Global pandemic situation">
@@ -55,6 +76,21 @@ export const CountriesTableFilter: FC = () => {
             ]}
             data={countriesTable}
           />
+          <div className="d-flex align-items-center">
+            <p className="tw-text-lg tw-font-bold tw-my-4 tw-mr-4 text-white">
+              Filters:
+            </p>
+            {filterTags.map((n: FilterMappingType, i: number) => (
+              <button
+                key={i}
+                type="button"
+                className="btn btn-outline-light tw-mr-4"
+                onClick={onFilterTagClick(n.value)}
+              >
+                {n.field}
+              </button>
+            ))}
+          </div>
         </div>
       </Section>
     </Container>

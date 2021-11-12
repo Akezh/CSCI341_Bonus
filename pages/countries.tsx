@@ -1,17 +1,17 @@
 import {
-  BecomeMember,
   Header,
   Footer,
   CountriesTableFilter,
-  DiseasesRankings,
+  PublicServantConsole,
+  SingleCountrySearch,
 } from "../components";
 
 const CountriesPage = () => (
   <div>
     <Header activeTab="Countries" />
     <CountriesTableFilter />
-    <BecomeMember />
-    <DiseasesRankings />
+    <SingleCountrySearch />
+    <PublicServantConsole />
     <Footer />
   </div>
 );

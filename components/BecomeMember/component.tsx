@@ -168,7 +168,7 @@ export const BecomeMember: FC = () => {
               onChange={onFieldChange}
             />
           </div>
-          <button className="btn btn-dark w-95" onClick={submitForm}>
+          <button className="btn btn-outline-light w-95" onClick={submitForm}>
             Become a member
           </button>
         </div>
