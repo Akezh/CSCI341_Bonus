@@ -1,6 +1,5 @@
-import { Container, Section } from "components";
+import { Container, Section, AnimationWrapper, RankingTable } from "components";
 import React, { FC, useEffect, useMemo, useState } from "react";
-import { RankingTable } from "components/RankingTable";
 import axios from "axios";
 
 export const DiseasesRankings: FC = () => {
@@ -69,34 +68,40 @@ export const DiseasesRankings: FC = () => {
 
   return (
     <Container style={{ backgroundColor: "#222125" }}>
-      <Section className="tw-mt-4" title="Rankings by disease type (Top 7)">
-        <div className="row">
-          <div className="col-12">
-            <p>Most spread diseases</p>
-            <RankingTable
-              columns={[
-                "Disease code",
-                "Pathogen",
-                "Infected people",
-                "Description",
-              ]}
-              data={topDiseasesBySpreading}
-            />
+      <AnimationWrapper time={3}>
+        <Section className="tw-mt-4" title="Rankings by disease type (Top 7)">
+          <div className="row">
+            <div className="col-12">
+              <p className="text-white tw-font-bold text-center tw-mb-4">
+                Most spread diseases (Infection cases)
+              </p>
+              <RankingTable
+                columns={[
+                  "Disease code",
+                  "Pathogen",
+                  "Infected people",
+                  "Description",
+                ]}
+                data={topDiseasesBySpreading}
+              />
+            </div>
+            <div className="col-12 tw-mt-10">
+              <p className="text-white tw-font-bold text-center tw-mb-4">
+                Most dangerous diseases (Mortal cases)
+              </p>
+              <RankingTable
+                columns={[
+                  "Disease code",
+                  "Pathogen",
+                  "Mortal cases",
+                  "Description",
+                ]}
+                data={topDiseasesByDeath}
+              />
+            </div>
           </div>
-          <div className="col-12">
-            <p>Most dangerous diseases</p>
-            <RankingTable
-              columns={[
-                "Disease code",
-                "Pathogen",
-                "Mortal cases",
-                "Description",
-              ]}
-              data={topDiseasesByDeath}
-            />
-          </div>
-        </div>
-      </Section>
+        </Section>
+      </AnimationWrapper>
     </Container>
   );
 };
