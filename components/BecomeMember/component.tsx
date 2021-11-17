@@ -46,7 +46,7 @@ export const BecomeMember: FC = () => {
   const submitForm = () => {
     axios({
       method: "post",
-      url: "http://127.0.0.1:8000/api/users",
+      url: "https://pandemic-bonus-app.herokuapp.com/api/users",
       headers: {},
       data: {
         name,

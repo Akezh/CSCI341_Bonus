@@ -12,7 +12,6 @@
     "axios": "^0.24.0",
     "bootstrap": "^5.0.0-beta3",
     "clsx": "^1.1.1",
-    "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
     "next": "latest",
     "next-seo": "^4.24.0",

@@ -28,7 +28,7 @@ export const PublicServantContributions: FC = () => {
 
   const getTopDiseaseRankings = () => {
     axios
-      .get("http://127.0.0.1:8000/api/records/servants")
+      .get("https://pandemic-bonus-app.herokuapp.com/api/records/servants")
       .then((response) => {
         setRawPublicServantContributions(response.data.rows);
       })

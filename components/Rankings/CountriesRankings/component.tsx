@@ -13,7 +13,7 @@ export const CountriesRankings: FC = () => {
 
   const getTopDiseaseRankings = () => {
     axios
-      .get("http://127.0.0.1:8000/api/ranking/deaths")
+      .get("https://pandemic-bonus-app.herokuapp.com/api/ranking/deaths")
       .then((response) => {
         setTopByDeath(response.data.rows);
       })
@@ -22,7 +22,7 @@ export const CountriesRankings: FC = () => {
       });
 
     axios
-      .get("http://127.0.0.1:8000/api/ranking/patients")
+      .get("https://pandemic-bonus-app.herokuapp.com/api/ranking/patients")
       .then((response) => {
         setTopByInfected(response.data.rows);
       })

@@ -85,7 +85,7 @@ export const PublicServantConsole: FC = () => {
         if (consoleStateCurrent === Console.ADD) {
           axios({
             method: "post",
-            url: `http://127.0.0.1:8000/api/records/${url_endpoint}`,
+            url: `https://pandemic-bonus-app.herokuapp.com/api/records/${url_endpoint}`,
             headers: {},
             data: {
               email: email,
@@ -104,7 +104,7 @@ export const PublicServantConsole: FC = () => {
         } else if (consoleStateCurrent === Console.UPDATE) {
           axios({
             method: "put",
-            url: `http://127.0.0.1:8000/api/records/${url_endpoint}`,
+            url: `https://pandemic-bonus-app.herokuapp.com/api/records/${url_endpoint}`,
             headers: {},
             data: {
               email: email,
@@ -123,7 +123,7 @@ export const PublicServantConsole: FC = () => {
         } else {
           axios({
             method: "delete",
-            url: `http://127.0.0.1:8000/api/records/${url_endpoint}`,
+            url: `https://pandemic-bonus-app.herokuapp.com/api/records/${url_endpoint}`,
             headers: {},
             data: {
               email,

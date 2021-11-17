@@ -10,7 +10,9 @@ export const CountriesTableFilter: FC = () => {
 
   const getCountriesTable = () => {
     axios
-      .get("http://127.0.0.1:8000/api/countries/pandemicStatus")
+      .get(
+        "https://pandemic-bonus-app.herokuapp.com/api/countries/pandemicStatus"
+      )
       .then((response) => {
         setCountries(response.data.rows);
       })
@@ -42,7 +44,7 @@ export const CountriesTableFilter: FC = () => {
     (filterTag: string) => () => {
       axios({
         method: "post",
-        url: "http://127.0.0.1:8000/api/countries/pandemicStatus",
+        url: "https://pandemic-bonus-app.herokuapp.com/api/countries/pandemicStatus",
         headers: {},
         data: {
           filter_field: filterTag,

@@ -22,7 +22,9 @@ export const DiseasesRankings: FC = () => {
 
   const getTopDiseaseRankings = () => {
     axios
-      .get("http://127.0.0.1:8000/api/ranking/diseaseSpreading")
+      .get(
+        "https://pandemic-bonus-app.herokuapp.com/api/ranking/diseaseSpreading"
+      )
       .then((response) => {
         setTopSpreadedDiseases(response.data.rows);
       })
@@ -31,7 +33,7 @@ export const DiseasesRankings: FC = () => {
       });
 
     axios
-      .get("http://127.0.0.1:8000/api/ranking/diseaseDeaths")
+      .get("https://pandemic-bonus-app.herokuapp.com/api/ranking/diseaseDeaths")
       .then((response) => {
         setTopDeathDiseases(response.data.rows);
       })

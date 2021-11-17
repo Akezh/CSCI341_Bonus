@@ -17,7 +17,7 @@ export const SingleCountrySearch: FC = () => {
       console.log("countryName", countryName);
       axios({
         method: "post",
-        url: "http://127.0.0.1:8000/api/countries/country",
+        url: "https://pandemic-bonus-app.herokuapp.com/api/countries/country",
         headers: {},
         data: {
           country: countryName,
