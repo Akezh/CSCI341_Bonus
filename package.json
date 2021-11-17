@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "axios": "^0.24.0",
