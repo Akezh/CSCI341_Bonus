@@ -1,4 +1,4 @@
-import { Container, Section } from "components";
+import { Container, Section, AnimationWrapper } from "components";
 import React, { FC, useCallback, useMemo, useState } from "react";
 import { flags } from "static/flags";
 import { Attributes, CountryDataMapping } from "./props";
@@ -78,50 +78,56 @@ export const SingleCountrySearch: FC = () => {
   );
 
   return (
-    <Container style={{ backgroundColor: "#28282C" }}>
-      <Section title="Explore countries">
-        <div className="row col-8 tw-mx-auto tw-mb-5">
-          <div className="mb-4 col-9">
-            <input
-              type="text"
-              className="form-control"
-              style={{ background: "transparent", color: "white" }}
-              placeholder="Country"
-              value={countryField}
-              onChange={onCountryFieldChange}
-            />
+    <Container style={{ backgroundColor: "#222125" }}>
+      <AnimationWrapper time={3}>
+        <Section title="Explore countries">
+          <div className="row col-8 tw-mx-auto tw-mb-5">
+            <div className="mb-4 col-9">
+              <input
+                type="text"
+                className="form-control"
+                style={{ background: "transparent", color: "white" }}
+                placeholder="Country"
+                value={countryField}
+                onChange={onCountryFieldChange}
+              />
+            </div>
+            <div className="mb-4 col-3">
+              <button
+                className="btn btn-outline-light w-95"
+                onClick={onSearchClicked(countryField)}
+              >
+                Search
+              </button>
+            </div>
           </div>
-          <div className="mb-4 col-3">
-            <button
-              className="btn btn-outline-light w-95"
-              onClick={onSearchClicked(countryField)}
-            >
-              Search
-            </button>
-          </div>
-        </div>
-        <div className="row">
-          {countryInfo &&
-            countryInfo.map((n, i) => (
-              <React.Fragment key={i}>
-                {i % 2 !== 0 && <div className="col-md-1 d-md-block d-none" />}
-                <div className="col-md-5 col-12 tw-mb-4">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <p className="tw-text-md tw-font-bold text-white">
-                      {n.field}
-                    </p>
-                    {n.value.startsWith("http") ? (
-                      <img alt="flag" src={n.value} width="48" height="36" />
-                    ) : (
-                      <p className="tw-text-md text-white">{n.value}</p>
-                    )}
+          <div className="row">
+            {countryInfo &&
+              countryInfo.map((n, i) => (
+                <React.Fragment key={i}>
+                  {i % 2 !== 0 && (
+                    <div className="col-md-1 d-md-block d-none" />
+                  )}
+                  <div className="col-md-5 col-12 tw-mb-4">
+                    <div className="d-flex justify-content-between align-items-center">
+                      <p className="tw-text-md tw-font-bold text-white">
+                        {n.field}
+                      </p>
+                      {n.value.startsWith("http") ? (
+                        <img alt="flag" src={n.value} width="48" height="36" />
+                      ) : (
+                        <p className="tw-text-md text-white">{n.value}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-                {i % 2 === 0 && <div className="col-md-1 d-md-block d-none" />}
-              </React.Fragment>
-            ))}
-        </div>
-      </Section>
+                  {i % 2 === 0 && (
+                    <div className="col-md-1 d-md-block d-none" />
+                  )}
+                </React.Fragment>
+              ))}
+          </div>
+        </Section>
+      </AnimationWrapper>
     </Container>
   );
 };

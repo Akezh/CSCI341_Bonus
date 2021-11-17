@@ -13,28 +13,40 @@ export const PersonalInfo: FC = () => {
 
           <AnimationWrapper time={2.0}>
             <p className="company-para tw-font-normal tw-text-gray-700 tw-mb-8">
-              Over {" "}
-              <a href="https://alabs.team/" className="tw-text-green">
+              Over{" "}
+              <a href="#" className="tw-text-green">
                 40,000,000
-              </a>{" "}people suffer from the COVID pandemic
+              </a>{" "}
+              people suffer from the COVID pandemic
             </p>
           </AnimationWrapper>
 
           <AnimationWrapper time={2.0}>
             <p className="company-para tw-font-normal tw-text-gray-700 tw-mb-8">
-              Over {" "}
-              <a href="https://alabs.team/" className="tw-text-green">
+              Over{" "}
+              <a href="#" className="tw-text-green">
                 10,000,000
-              </a>{" "}families lost their members due to COVID pandemic
+              </a>{" "}
+              families lost their members due to COVID pandemic
             </p>
           </AnimationWrapper>
 
           <AnimationWrapper time={3.0}>
             <div className="tw-my-10">
               <a href="#apply">
-                <div className="d-flex align-items-center tw-bg-green p-3" style={{ borderRadius: 8 }}>
-                  <img className="tw-mx-5" alt="i" src="/icons/doctor_icon.png" />
-                  <p className="tw-font-bold tw-ml-5 tw-mb-2" style={{ fontSize: 20 }}>
+                <div
+                  className="d-flex align-items-center tw-bg-green p-3"
+                  style={{ borderRadius: 8 }}
+                >
+                  <img
+                    className="tw-mx-5"
+                    alt="i"
+                    src="/icons/doctor_icon.png"
+                  />
+                  <p
+                    className="tw-font-bold tw-ml-5 tw-mb-2"
+                    style={{ fontSize: 20 }}
+                  >
                     Become a doctor
                   </p>
                 </div>
@@ -43,15 +55,20 @@ export const PersonalInfo: FC = () => {
 
             <div className="tw-mb-20">
               <a className="mb-5" href="#apply">
-                <div className="d-flex align-items-center tw-bg-green p-3" style={{ borderRadius: 8 }}>
+                <div
+                  className="d-flex align-items-center tw-bg-green p-3"
+                  style={{ borderRadius: 8 }}
+                >
                   <img className="tw-mx-5" alt="i" src="/icons/ps_icon.png" />
-                  <p className="tw-font-bold tw-ml-5 tw-mb-2" style={{ fontSize: 20 }}>
+                  <p
+                    className="tw-font-bold tw-ml-5 tw-mb-2"
+                    style={{ fontSize: 20 }}
+                  >
                     Become a public servant
                   </p>
                 </div>
               </a>
             </div>
-
           </AnimationWrapper>
         </div>
       </div>

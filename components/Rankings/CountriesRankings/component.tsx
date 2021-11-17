@@ -1,6 +1,5 @@
-import { Container, Section } from "components";
+import { Container, Section, AnimationWrapper, RankingTable } from "components";
 import React, { FC, useEffect, useMemo, useState } from "react";
-import { RankingTable } from "components/RankingTable";
 import { flags } from "static/flags";
 import axios from "axios";
 
@@ -58,22 +57,30 @@ export const CountriesRankings: FC = () => {
 
   return (
     <Container style={{ backgroundColor: "#222125" }}>
-      <Section title="Rankings by country (Top 12)">
-        <div className="row">
-          <div className="col-md-6 col-12">
-            <RankingTable
-              columns={["Flag", "Country", "Total deaths"]}
-              data={topByDeathWithFlags}
-            />
+      <AnimationWrapper time={4}>
+        <Section title="Rankings by country (Top 12)">
+          <div className="row">
+            <div className="col-md-6 col-12">
+              <p className="text-white tw-font-bold text-center tw-mb-8">
+                Countries with top mortal cases
+              </p>
+              <RankingTable
+                columns={["Flag", "Country", "Total deaths"]}
+                data={topByDeathWithFlags}
+              />
+            </div>
+            <div className="col-md-6 col-12">
+              <p className="text-white tw-font-bold text-center tw-mb-8">
+                Countries with top infection cases
+              </p>
+              <RankingTable
+                columns={["Flag", "Country", "Total infected people"]}
+                data={topByPatientsWithFlags}
+              />
+            </div>
           </div>
-          <div className="col-md-6 col-12">
-            <RankingTable
-              columns={["Flag", "Country", "Total infected people"]}
-              data={topByPatientsWithFlags}
-            />
-          </div>
-        </div>
-      </Section>
+        </Section>
+      </AnimationWrapper>
     </Container>
   );
 };

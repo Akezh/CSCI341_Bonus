@@ -1,6 +1,5 @@
-import { Container, Section } from "components";
+import { Container, Section, AnimationWrapper, RankingTable } from "components";
 import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
-import { RankingTable } from "components/RankingTable";
 import { flags } from "static/flags";
 import { filterTags, FilterMappingType } from "static/filterTags";
 import { Attributes } from "./props";
@@ -60,39 +59,41 @@ export const CountriesTableFilter: FC = () => {
   );
 
   return (
-    <Container style={{ backgroundColor: "#222125" }}>
-      <Section title="Global pandemic situation">
-        <div className="col-12">
-          <RankingTable
-            columns={[
-              "Flag",
-              "Country",
-              "Death ratio",
-              "Total deaths",
-              "Infected people",
-              "Population death ratio",
-              "Population infection ratio",
-              "Population",
-            ]}
-            data={countriesTable}
-          />
-          <div className="d-flex align-items-center">
-            <p className="tw-text-lg tw-font-bold tw-my-4 tw-mr-4 text-white">
-              Filters:
-            </p>
-            {filterTags.map((n: FilterMappingType, i: number) => (
-              <button
-                key={i}
-                type="button"
-                className="btn btn-outline-light tw-mr-4"
-                onClick={onFilterTagClick(n.value)}
-              >
-                {n.field}
-              </button>
-            ))}
+    <Container style={{ backgroundColor: "#28282C" }}>
+      <AnimationWrapper time={3}>
+        <Section title="Global pandemic situation">
+          <div className="col-12">
+            <RankingTable
+              columns={[
+                "Flag",
+                "Country",
+                "Death ratio",
+                "Total deaths",
+                "Infected people",
+                "Population death ratio",
+                "Population infection ratio",
+                "Population",
+              ]}
+              data={countriesTable}
+            />
+            <div className="d-flex align-items-center">
+              <p className="tw-text-lg tw-font-bold tw-my-4 tw-mr-4 text-white">
+                Filters:
+              </p>
+              {filterTags.map((n: FilterMappingType, i: number) => (
+                <button
+                  key={i}
+                  type="button"
+                  className="btn btn-outline-light tw-mr-4"
+                  onClick={onFilterTagClick(n.value)}
+                >
+                  {n.field}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </AnimationWrapper>
     </Container>
   );
 };
